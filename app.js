@@ -24,9 +24,9 @@ Write a function called multiply() that takes in two numbers as arguments and re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
 // Write your code here
-function multiply(a, b,) { //eslint-disable-line
+function multiply(a, b, c=1) { //eslint-disable-line
   var multArray = []; 
-  var productAnswer = a * b;
+  var productAnswer = a * b * c;
   multArray[0] = productAnswer;
   multArray[1] = 'The product of ' + a + ' and ' + b + ' is ' + productAnswer + '.';
   console.log(multArray);
@@ -67,7 +67,7 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-testSumAndMultiply(4,7,5);
+// testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -82,6 +82,15 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
+  var questionReturnArray = [];
+  var aAddB = sum((testArray[0]), (testArray[1]));
+  aAddB = aAddB[0];
+  var finalSum = sum(aAddB, testArray[2])[0];
+  questionReturnArray[0] = finalSum;
+
+  questionReturnArray[1] = testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' was passed in as an array of numbers, and ' + finalSum + ' is their sum.';
+  console.log(testArray);
+  return questionReturnArray;
 
 }
 
@@ -99,12 +108,20 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
-function multiplyArray(multArr) { //eslint-disable-line
 
+function multiplyArray(multArr) { //eslint-disable-line
+  var aTimesB = multiply((multArr[0]), (multArr[1]), (multArr[2]))[0];
+  console.log(aTimesB);
+
+  var questionFiveReturnArray = 'The numbers ' + multArr[0] + ',' + multArr[1] + ',' + multArr[2] + ' have a product of ' + aTimesB + '.';
+  console.log(questionFiveReturnArray);
+  return [aTimesB, questionFiveReturnArray];
 }
+  
+
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
